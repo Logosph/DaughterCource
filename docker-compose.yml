@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: meetings
+      POSTGRES_USER: l_daughter
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - postgres_data:/Users/logosph/postgres_dbs/meetings_lovely_daughter
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8001"
+    volumes:
+      - .:/application
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://l_daughter:1234@db:5432/meetings
+
+volumes:
+  postgres_data:
