@@ -62,7 +62,10 @@ def get_meetings(request):
         resp["meetings"].append({
             "name": meeting.meeting_name,
             "date": meeting.meeting_date,
-            "link": meeting.meeting_link
+            "time": meeting.meeting_time,
+            "duration": meeting.meeting_duration_in_minutes,
+            "link": meeting.meeting_link,
+            "capacity": meeting.meeting_count_of_users,
         })
     return JsonResponse(resp, status=200)
 
@@ -72,7 +75,12 @@ def get_meetings(request):
 def add_meeting(request):
     name = request.POST.get("name")
     date = request.POST.get("date")
+    time = request.POST.get("time")
     link = request.POST.get("link")
+    duration = request.POST.get("duration")
+    capacity = request.POST.get("capacity")
+
+
     user_id = None
     try:
         auth_header = request.META.get("HTTP_AUTHORIZATION")
@@ -91,7 +99,15 @@ def add_meeting(request):
 
     if user_id is None:
         return JsonResponse({"error": "User not found"}, status=401)
-    models.Meeting.objects.create(meeting_name=name, meeting_date=date, meeting_link=link, meeting_user_id=user_id)
+    models.Meeting.objects.create(
+        meeting_name=name,
+        meeting_date=date,
+        meeting_link=link,
+        meeting_user_id=user_id,
+        meeting_duration_in_minutes=duration,
+        meeting_count_of_users=capacity,
+        meeting_time=time
+    )
     return JsonResponse({"message": "Meeting created"}, status=201)
 
 
