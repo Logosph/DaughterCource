@@ -1,0 +1,72 @@
+.main-auth-sign-up {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin: 214px auto;
+    width: fit-content;
+    padding: 80px 60px;
+    flex-direction: column;
+    box-shadow: 4px 3px 17px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
+}
+
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 400px;
+}
+
+.sign-up__title {
+    color: #0a3b65;
+    font-size: 44px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+
+}
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sign-up-form__username,
+.sign-up-form__pswd,
+.sign-up-form__pswd-repeat {
+    padding: 20px;
+    border: 1px solid #425f78;
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+}
+
+.sign-up-form__username::placeholder,
+.sign-up-form__pswd::placeholder,
+.sign-up-form__pswd-repeat::placeholder {
+    font-size: 18px;
+    color: #a09fb0;
+}
+
+.sign-up-form__submit {
+    border: 1px solid #0E497D;
+    border-radius: 5px;
+    background-color: #0E497D;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sign-up-form__submit:hover {
+    border: 1px solid #0c3f6b;
+    background-color: #0c3f6b;
+}
+
+.sign-up__log-in-text{
+    color: #8b8b8b;
+}
+
+.sign-up__log-in-text a {
+    color: #8b8b8b;
+}

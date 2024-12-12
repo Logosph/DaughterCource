@@ -1,0 +1,25 @@
+.page-auth {
+    background: rgb(175, 188, 221);
+    background: linear-gradient(0deg, rgba(175, 188, 221, 1) 0%, rgba(219, 237, 255, 1) 100%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-repeat: no-repeat;
+}
+
+.page{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hidden{
+    display: none;
+}
+
+.main {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    padding: 80px 60px;
+    flex-direction: column;
+    box-shadow: 4px 3px 17px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
+}

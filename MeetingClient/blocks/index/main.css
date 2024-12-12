@@ -1,0 +1,157 @@
+.content {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.content__title {
+    font-size: 48px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.content__up{
+    display: flex;
+    align-items: baseline;
+    gap: 25px;
+}
+
+select{
+    font-size: 36px;
+}
+
+.active-section {
+    margin-bottom: 100px;
+}
+
+.active {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+}
+
+.active,
+.scheduled {
+    margin-bottom: 30px;
+}
+
+.active-left,
+.scheduled {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.active__icon,
+.scheduled__icon {
+    width: 40px;
+}
+
+.active__title,
+.scheduled__title {
+    font-size: 32px;
+}
+
+
+
+
+.active-cards__list,
+.scheduled-cards__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 0.33fr));
+    grid-gap: 20px 18px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 2px rgba(34, 60, 80, 0.15);
+    padding: 30px;
+}
+
+.members-icon,
+.delete-icon {
+    width: 30px;
+}
+
+.first-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.second-row {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.third-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__title {
+    font-size: 24px;
+}
+
+.active-card__mark {
+    display: block;
+    padding: 5px 10px;
+    background-color: rgb(186, 235, 186);
+    border-radius: 20px;
+    color: rgb(70, 123, 70);
+}
+
+.scheduled-card__mark {
+    display: block;
+    padding: 5px 10px;
+    background-color: rgb(180, 186, 233);
+    border-radius: 20px;
+    color: rgb(47, 52, 83);
+}
+
+.card__delete-btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    width: 35px;
+    height: 35px;
+}
+
+
+.card__delete-btn:hover {
+    border: 1px solid #0c3f6b;
+    border-radius: 3px;
+}
+
+.card__join-btn {
+    flex-basis: 80%;
+    padding: 12px;
+    border: 1px solid #0E497D;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #0E497D;
+    font-size: 18px;
+    color: white;
+}
+
+.card__join-btn:hover {
+    border: 1px solid #0c3f6b;
+    background-color: #0c3f6b;
+}
+
+.card__later-btn {
+    flex-basis: 80%;
+    padding: 12px;
+    border: 1px solid #aac2d7;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: white;
+    font-size: 18px;
+    color: #aac2d7;
+}

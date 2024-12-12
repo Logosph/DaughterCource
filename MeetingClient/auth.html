@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=0.75, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="./pages/auth.css">
+</head>
+
+<body class="page-auth">
+    <header class="header">
+        <div class="header-left">
+            <img src="./images/main-icon-blue.svg" alt="main-icon-blue" class="header-icon">
+            <img src="./images/text-blue.svg" alt="main-icon-blue" class="header-icon-text">
+        </div>
+        <div class="header-right">
+            <button class="sign-up-btn">Зарегистрироваться</button>
+            <button class="log-in-btn">Войти</button>
+        </div>
+    </header>
+
+    <main class="main main-auth-log-in">
+        <div class="sign-up hidden">
+            <h1 class="sign-up__title">Регистрация</h1>
+            <form action="" class="sign-up-form">
+                <input type="text" class="sign-up-form__username" id="username" placeholder="Имя пользователя" required>
+                <input type="password" class="sign-up-form__pswd" id="password" placeholder="Пароль" minlength="6" required>
+                <input type="password" class="sign-up-form__pswd-repeat" id="password-repeat" placeholder="Повторите пароль" required>
+                <button class="sign-up-form__submit" type="submit">Зарегистрироваться</button>
+            </form>
+            <p class="sign-up__log-in-text">Уже есть аккаунт? <a href="#" id="log-in-link">Нажмите сюда</a></p>
+        </div>
+
+        <div class="log-in">
+            <h1 class="log-in__title">Вход</h1>
+            <form action="" class="log-in-form">
+                <input type="text" class="log-in-form__username" id="username-log" placeholder="Имя пользователя" required>
+                <input type="password" class="log-in-form__pswd" id="password-log" placeholder="Пароль" required>
+                <button class="log-in-form__submit" type="submit">Войти</button>
+            </form>
+            <p class="log-in__log-in-text">Ещё нет аккаунта? <a href="#" id="sign-up-link">Зарегистрироваться</a></p>
+        </div>
+    </main>
+
+    <script src="./scripts/auth.js"></script>
+</body>

@@ -1,0 +1,63 @@
+.popup {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup__content {
+    width: fit-content;
+    min-height: 330px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 34px 36px;
+}
+
+.popup__title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.popup__input {
+    padding: 7px 10px;
+}
+
+.popup__card-name {
+    width: 100%;
+}
+
+.popup__card-count {
+    width: 160px;
+}
+
+.popup__type_url {
+    width: 100%;
+}
+
+.popup__button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #0E497D;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #0E497D;
+    font-size: 18px;
+    color: white;
+}

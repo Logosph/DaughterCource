@@ -80,30 +80,11 @@ def add_meeting(request):
     duration = request.POST.get("duration")
     capacity = request.POST.get("capacity")
 
-
-    user_id = None
-    try:
-        auth_header = request.META.get("HTTP_AUTHORIZATION")
-        if auth_header:
-            auth_type, auth_token = auth_header.split(" ")
-            if auth_type == "Bearer":
-                decoded_jwt = jwt.decode(auth_token, settings.SECRET_KEY, algorithms=['HS256'])
-                user_id = decoded_jwt.get("user_id")
-                user = models.UserModel.objects.filter(user_id=user_id).first()
-                if user is None:
-                    return JsonResponse({"error": "User not found"}, status=401)
-    except jwt.ExpiredSignatureError:
-        return JsonResponse({"error": "Token expired"}, status=401)
-    except jwt.InvalidTokenError:
-        return JsonResponse({"error": "Invalid token"}, status=401)
-
-    if user_id is None:
-        return JsonResponse({"error": "User not found"}, status=401)
     models.Meeting.objects.create(
         meeting_name=name,
         meeting_date=date,
         meeting_link=link,
-        meeting_user_id=user_id,
+        meeting_user_id=1,
         meeting_duration_in_minutes=duration,
         meeting_count_of_users=capacity,
         meeting_time=time

@@ -1,0 +1,9 @@
+@import url('../vendor/normalize.css');
+@import url('../vendor/fonts.css');
+@import url('../vendor/marpad.css');
+
+
+@import url('../blocks/index/header.css');
+@import url('../blocks/index/main.css');
+@import url('../blocks/index/popup.css');
+@import url('../blocks/page.css');

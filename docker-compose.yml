@@ -21,8 +21,44 @@ services:
       - "8001:8001"
     depends_on:
       - db
+      - traefik
     environment:
       - DATABASE_URL=postgres://l_daughter:1234@db:5432/meetings
+    labels:
+      - "traefik.enable=true"  # Включаем маршрутизацию для web
+      - "traefik.http.routers.web.rule=Host(`api.local`)"  # Настроить маршрут для API
+      - "traefik.http.services.web.loadbalancer.server.port=8001"  # Указываем порт backend
+
+
+  frontend:
+    build: ./MeetingClient
+    ports:
+      - "3000:80"
+    depends_on:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`frontend.local`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.redirect-to-auth.redirectregex.regex=^http://frontend.local/$"
+      - "traefik.http.middlewares.redirect-to-auth.redirectregex.replacement=http://frontend.local/auth.html"
+      - "traefik.http.middlewares.redirect-to-auth.redirectregex.permanent=true"
+      - "traefik.http.routers.frontend.middlewares=redirect-to-auth"
+
+  traefik:
+    image: traefik:v2.10
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entryPoints.web.address=:80"
+      - "--entryPoints.websecure.address=:443"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"  # Для панели управления Traefik (не рекомендуется использовать в продакшн-режиме)
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
 
 volumes:
   postgres_data:

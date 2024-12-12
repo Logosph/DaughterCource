@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Встречи</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="page">
+<div class="page__content">
+    <header class="header">
+        <div class="header-left">
+            <img src="./images/main-icon-white.svg" alt="main-icon-blue" class="header-icon">
+            <img src="./images/text-white.svg" alt="main-icon-blue" class="header-icon-text">
+            <nav>
+                <ul class="header-left-navigation">
+                    <li>Встречи</li>
+                    <li>Аналитика</li>
+                    <li>Управление</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <button class="add-meet-btn">Создать встречу
+                <img src="./images/video-add.svg" alt="" class="add-meet-icon">
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="content__up">
+            <h1 class="content__title">Текущие встречи для комнаты:</h1>
+            <select name="" id="">
+                <option value="">Комната 1</option>
+            </select>
+        </div>
+
+
+        <section class="active-section">
+            <div class="active">
+                <div class="active-left">
+                    <img src="./images/live.svg" alt="live" class="active__icon">
+                    <h2 class="active__title">Сейчас в эфире</h2>
+                </div>
+                <button class="add-meet-btn">Присоединиться по сслыке</button>
+            </div>
+            <section class="active-cards">
+                <ul class="active-cards__list">
+
+                </ul>
+            </section>
+        </section>
+
+        <section class="scheduled-section">
+            <div class="scheduled">
+                <img src="./images/schedueled.svg" alt="scheduled" class="scheduled__icon">
+                <h2 class="scheduled__title">Запланированные</h2>
+            </div>
+            <section class="scheduled-cards">
+                <ul class="scheduled-cards__list">
+
+                </ul>
+            </section>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <p class="footer__text">
+            2024 Спесивцева АА
+        </p>
+    </footer>
+
+
+    <div class="popup hidden">
+        <div class="popup__content">
+            <button type="button" class="popup__close"></button>
+            <h3 class="popup__title">Новая встреча</h3>
+            <form class="popup__form" name="new-place">
+                <fieldset>
+                    <input type="text" name="card-name" class="popup__input popup__card-name" placeholder="Название" required>
+                    <input type="number" name="card-count" class="popup__input popup__card-count"
+                           placeholder="Кол-во участников" required>
+                </fieldset>
+
+                <fieldset>
+                    <input type="url" name="link" class="popup__input popup__type_url" placeholder="Ссылка на Google Meet"
+                           required>
+                </fieldset>
+
+                <fieldset>
+                    <input type="date" name="card-date" class="popup__input popup__card-date" required>
+                    <input type="time" name="card-time" class="popup__input popup__card-time" required>
+                    <input type="number" name="card-duration" class="popup__input popup__card-duration" placeholder="Длительность" required>
+                    <p>мин.</p>
+                </fieldset>
+
+
+                <button type="submit" class="button popup__button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<template id="active-card-template">
+    <li class="active-cards__item card">
+        <div class="first-row">
+            <h3 class="card__title"></h3>
+            <p class="active-card__mark">Live</p>
+        </div>
+        <div class="second-row">
+            <img src="./images/members.svg" class="members-icon">
+            <p class="card__members"><span class="card__members-count"></span> участников -</p>
+            <p class="card__duartion"><span class="card__duartion-count"></span> мин.</p>
+        </div>
+        <div class="third-row">
+            <button class="card__join-btn">Присоединиться</button>
+            <button class="card__delete-btn">
+                <img src="./images/delete.svg" class="delete-icon">
+            </button>
+        </div>
+    </li>
+</template>
+
+<template id="scheduled-card-template">
+    <li class="scheduled-cards__item card">
+        <div class="first-row">
+            <h3 class="card__title"></h3>
+            <p class="scheduled-card__mark">Schedueled</p>
+        </div>
+        <div class="second-row">
+            <img src="./images/members.svg" class="members-icon">
+            <p class="card__members"><span class="card__members-count"></span> участников -</p>
+            <p class="card__duartion"><span class="card__duartion-count"></span> мин.</p>
+        </div>
+        <div class="second-row">
+            <img src="./images/schedule.svg" class="members-icon">
+            <p class="card__date"></p>
+            <p class="card__time"></p>
+        </div>
+        <div class="third-row">
+            <button class="card__later-btn" disabled>Начнется позже</button>
+            <button class="card__delete-btn">
+                <img src="./images/delete.svg" class="delete-icon">
+            </button>
+        </div>
+    </li>
+</template>
+
+<script src="./scripts/index.js"></script>
+
+</body>
+
+</html>
